@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Brenna Veen</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png" />
+        <link rel="manifest" href="./img/site.webmanifest" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body class="bg-gradient text-gray-200">
+        <script
+            src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.11.0/dist/alpine.js"
+            defer
+        ></script>
+        <div id="hero-container" class="relative overflow-hidden bg-black">
+            <div
+                x-data="{ open: false }"
+                class="relative pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32"
+            >
+                <div class="max-w-screen-xl mx-auto px-4 sm:px-6">
+                    <nav id="hero-nav"
+                        class="relative flex items-center justify-between sm:h-10 md:justify-center"
+                    >
+                        <div id="hero-nav-left" class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+                            <div class="flex items-center justify-between w-full md:w-auto">
+                                <a href="#">
+                                    <img
+                                        class="h-8 w-auto sm:h-10"
+                                        src="./img/favicon-32x32.png"
+                                        alt="Brenna Veen Logo"
+                                    />
+                                </a>
+                            </div>
+                        </div>
+                        <div id="hero-dropdown" class="hidden md:block">
+                            <a
+                                href="#about"
+                                class="font-medium text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 transition duration-150 ease-in-out"
+                                >About</a
+                            >
+                            <!-- <a
+                                href="#portfolio"
+                                class="ml-10 font-medium text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 transition duration-150 ease-in-out"
+                                >Portfolio</a
+                            > -->
+                            <!-- <a
+                                href="#blog"
+                                class="ml-10 font-medium text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 transition duration-150 ease-in-out"
+                                >Blog</a
+                            > -->
+                        </div>
+                        <div id="hero-nav-right" class="-mr-2 flex items-center flex-row-reverse flex-1 md:absolute md:right-0">
+                            <button
+                                @click="open = true"
+                                type="button"
+                                class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-gray-100 transition duration-150 ease-in-out"
+                            >
+                                <svg
+                                    class="h-6 w-6"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    />
+                                </svg>
+                            </button>
+                            <a href="https://www.linkedin.com/in/brenna-veen" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-auto sm:h-6 fill-current mr-2" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/brennaveen" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-auto sm:h-6 fill-current mr-2" width: viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+                <div
+                    x-show="open"
+                    style="display: none;"
+                    class="absolute top-0 inset-x-0 p-2 md:hidden"
+                >
+                    <div
+                        class="rounded-lg shadow-md transition transform origin-top-right"
+                        x-show="open"
+                        x-transition:enter="duration-150 ease-out"
+                        x-transition:enter-start="opacity-0 scale-95"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="duration-100 ease-in"
+                        x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-95"
+                    >
+                        <div class="rounded-lg bg-white shadow-xs overflow-hidden">
+                            <div class="px-5 pt-4 flex items-center justify-between">
+                                <div>
+                                    <img
+                                        class="h-8 w-auto"
+                                        src="./img/favicon-32x32.png"
+                                        alt="Brenna Veen Logo"
+                                    />
+                                </div>
+                                <div class="-mr-2">
+                                    <button
+                                        @click="open = false"
+                                        type="button"
+                                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                                    >
+                                        <svg
+                                            class="h-6 w-6"
+                                            stroke="currentColor"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M6 18L18 6M6 6l12 12"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="px-2 pt-2 pb-3">
+                                <a
+                                    href="#about"
+                                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                                    >About</a
+                                >
+                                <!-- <a
+                                    href="#portfolio"
+                                    class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                                    >Portfolio</a
+                                > -->
+                                <!-- <a
+                                    href="#blog"
+                                    class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"
+                                    >Blog</a
+                                > -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28"
+                >
+                    <div class="text-center">
+                        <h1
+                            class="text-4xl tracking-tight leading-10 font-medium text-gray-300 sm:text-5xl sm:leading-none md:text-6xl"
+                        >
+                            Hi, I'm <span class="text-teal-400">Brenna Veen</span>.
+                        </h1>
+                        <p
+                            class="mt-3 max-w-md mx-auto text-base text-gray-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
+                        >
+                            I'm a full stack developer specializing in business applications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <article class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+            <section id="about" class="mb-12">
+                <h2 class="text-3xl leading-6 font-medium mb-12 text-teal-400">About</h2>
+                <div class="md:grid md:grid-cols-2 md:gap-6 mt-5">
+                    <div class="md:mt-0 md:col-span-1">
+                        <p class="mb-3">
+                            I live in Oklahoma with my husband and our cat, Baby Sugar. In my
+                            leisure time, I enjoy reading, computer games, and finding new ways to
+                            drive my husband crazy with my home decorating/organization ideas.
+                        </p>
+                        <p class="mb-3">
+                            We recently bought our first house, which was built in the 80s, and are
+                            working on some renovations. I really enjoy taking something outdated
+                            and making it look fresh and modern. It's much like redesigning a web
+                            page, but alas involves much more sweat!
+                        </p>
+                        <p class="mb-3">
+                            I started out developing as a Programmer/Analyst with Oklahoma based
+                            grocery chain several years ago. I still work for the same company, but
+                            now I am their Lead Developer.
+                        </p>
+                    </div>
+                    <div class="md:mt-0 md:col-span-1">
+                        <figure class="relative mx-auto w-full xl:w-3/4">
+                            <figcaption
+                                class="w-full absolute top-0 left-0 py-3 text-white bg-gray-900 text-sm text-center rounded-t-lg opacity-50"
+                            >
+                                Baby Sugar assisting renovations by checking curtain length.
+                            </figcaption>
+                            <img
+                                src="img/cat.jpg"
+                                class="rounded-lg w-full"
+                                height="200px"
+                                width="200px"
+                                alt="My cat, Baby Sugar"
+                            />
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <!-- <section id="portfolio" class="mb-12">
+                <h2 class="text-3xl leading-6 font-medium mb-12 text-teal-400">Portfolio</h2>
+                <p>
+                    I lead a year and a half long initative to refactor and redesign our company
+                    intranet website, which was recently completed by myself and my two team
+                    members. Our intranet site supports over 40 applications making this an arduous
+                    task as many of pages were outdated, disjointed, and unwieldy. Now all of our
+                    applications within the site have cohesive design practices and theming. In
+                    addition, the site integrates with our internal mobile app, which is extremely
+                    helpful for our more mobile employees. Our new format has slashed
+                    development time in half!
+                </p>
+            </section> -->
+            <!-- <section id="blog">
+                <h2 class="text-3xl leading-6 font-medium mb-12 text-teal-400">Blog</h2>
+                <h2 class="text-2xl leading-6 font-bold mb-12">
+                    How To Make Great Business Applications
+                </h2>
+                <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+                    <div>
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 fill-current"
+                                viewBox="0 0 24 24"
+                            >
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M16.66 4.52l2.83 2.83-2.83 2.83-2.83-2.83 2.83-2.83M9 5v4H5V5h4m10 10v4h-4v-4h4M9 15v4H5v-4h4m7.66-13.31L11 7.34 16.66 13l5.66-5.66-5.66-5.65zM11 3H3v8h8V3zm10 10h-8v8h8v-8zm-10 0H3v8h8v-8z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="mt-5">
+                            <h5 class="text-lg leading-6 font-bold">
+                                Integration
+                            </h5>
+                            <p class="mt-2 text-base leading-6">
+                                When building or revamping an application, it's important to
+                                consider integration options with existing applications. Making it
+                                easy for employees to complete their tasks improves productivity.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mt-10 lg:mt-0">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current">
+                                <path d="M24 0H0v24h24V0z" fill="none" />
+                                <path
+                                    d="M17.66 7.93L12 2.27 6.34 7.93c-3.12 3.12-3.12 8.19 0 11.31C7.9 20.8 9.95 21.58 12 21.58s4.1-.78 5.66-2.34c3.12-3.12 3.12-8.19 0-11.31zM12 19.59c-1.6 0-3.11-.62-4.24-1.76C6.62 16.69 6 15.19 6 13.59s.62-3.11 1.76-4.24L12 5.1v14.49z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="mt-5">
+                            <h5 class="text-lg leading-6 font-bold">
+                                Consistency
+                            </h5>
+                            <p class="mt-2 text-base leading-6">
+                                Providing consistency between applications will also make employee
+                                (and your!) jobs easier. New applications can be daunting to many
+                                employees so ensuring a similar look and feel across applications
+                                helps employees find a feeling of familiarity.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mt-10 lg:mt-0">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-md bg-teal-500 text-white"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="mt-5">
+                            <h5 class="text-lg leading-6 font-bold">
+                                Satisfaction
+                            </h5>
+                            <p class="mt-2 text-base leading-6">
+                                Just because an application is not visible to anyone outside the
+                                company doesn't mean it shouldn't look good and work well. Creating
+                                applications with UX in mind increases satisfaction and adoption.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+        </article>
+    </body>
+</html>
