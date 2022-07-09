@@ -1,19 +1,17 @@
-@import 'tailwindcss/base';
-
-@import 'tailwindcss/components';
-
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .bg-gradient {
     background: #29323c; /* fallback for old browsers */
     background: -webkit-linear-gradient(
         to right,
-        #29323c,
-        #3f4a56
+        #1e293b,
+        #334155
     ); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
         to right,
-        #29323c,
-        #3f4a56
+        #1e293b,
+        #334155
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
